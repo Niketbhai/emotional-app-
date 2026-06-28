@@ -7,7 +7,7 @@ import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContai
 const DEADZONE = 2.0;
 const LERP_VAL = 0.05;
 
-export default function VibeVizTab() {
+export default function NikuTab() {
   const videoRef = useRef<HTMLVideoElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const [faceLandmarker, setFaceLandmarker] = useState<FaceLandmarker | null>(null);
@@ -592,8 +592,8 @@ export default function VibeVizTab() {
     ctx.lineWidth = 4;
     ctx.font = '900 16px "Arial Black", sans-serif';
     ctx.textAlign = 'center';
-    ctx.strokeText('VIBE CHECK', 0, -15);
-    ctx.fillText('VIBE CHECK', 0, -15);
+    ctx.strokeText('NIKU CHECK', 0, -15);
+    ctx.fillText('NIKU CHECK', 0, -15);
 
     ctx.restore();
   };
@@ -651,7 +651,7 @@ Here are the average facial blendshape scores (from 0.0 to 1.0) of the student(s
 ${JSON.stringify(avgBlendshapes, null, 2)}
 
 Current dominant emotion detected by heuristic model: ${dominantEmotion}
-Current Vibe Check (0 = negative, 1 = positive): ${vibeValue.toFixed(2)}
+Current Niku Check (0 = negative, 1 = positive): ${vibeValue.toFixed(2)}
 Number of people detected: ${numFacesDetectedRef.current}
 
 Based on these 52 facial muscle activations and the heuristic data, provide a short, insightful summary (1-2 sentences) of how the student(s) are feeling. Then, provide a detailed step-by-step analysis and evidence based on the facial blendshapes to support your summary.
@@ -845,11 +845,11 @@ Based on these 52 facial muscle activations and the heuristic data, provide a sh
         </div>
       </div>
 
-      {/* Vibe Check Timeline */}
+      {/* Niku Check Timeline */}
       <div className="bg-slate-800/80 border-4 border-black p-4 rounded-[2.5rem] backdrop-blur-md w-full shadow-[10px_10px_0px_0px_rgba(0,0,0,1)] text-white mb-8">
         <div className="flex justify-between items-center mb-4 border-b-4 border-black pb-3">
           <h2 className="text-xl font-black uppercase italic flex items-center gap-2">
-            Vibe Check Timeline
+            Niku Check Timeline
           </h2>
           <select
             value={timeWindow}
@@ -884,7 +884,7 @@ Based on these 52 facial muscle activations and the heuristic data, provide a sh
               />
               <Tooltip 
                 labelFormatter={(label) => new Date(label).toLocaleTimeString()}
-                formatter={(value: number) => [value.toFixed(2), 'Vibe Score']}
+                formatter={(value: number) => [value.toFixed(2), 'Niku Score']}
                 contentStyle={{ backgroundColor: '#0f172a', border: '2px solid #000', borderRadius: '8px', fontWeight: 'bold' }}
               />
               <Line 

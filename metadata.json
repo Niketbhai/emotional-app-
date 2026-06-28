@@ -1,8 +1,10 @@
 {
-  "name": "emotion app",
-  "description": "Real-time facial analysis and emotion tracking using MediaPipe and Gemini AI.",
+  "name": "Niku",
+  "description": "Niku - Real-time facial muscle and emotion tracking using MediaPipe and Gemini AI.",
   "requestFramePermissions": [
     "camera"
   ],
-  "majorCapabilities": []
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
 }
